@@ -4,15 +4,20 @@ namespace CubeField
     public class Barriers
     {
 
-        string[,] smallBarrier = new string[2,2] {{"*","*"},{"*","*"}};
-        string[,] mediumBarrier = new string[3, 3] { { "*", "*", "*" }, { "*", "*", "*" }, {"*", "*", "*"} };
-        string[,] bigBarrier = new string[5, 5] { { "*", "*", "*", "*", "*" }, { "*", "*", "*", "*", "*" }, { "*", "*", "*", "*", "*" }, { "*", "*", "*", "*", "*" }, { "*", "*", "*", "*", "*" } };
+        public string[,] smallBarrier = new string[2, 2] { { "", "" }, { "", "" } };
+        public string[,] mediumBarrier = new string[3, 3] { { "", "", "" }, { "", "", "" }, { "", "", "" } };
+        public string[,] bigBarrier = new string[5, 5] { { "*", "*", "*", "*", "*" }, { "*", "*", "*", "*", "*" }, { "*", "*", "*", "*", "*" }, { "*", "*", "*", "*", "*" }, { "*", "*", "*", "*", "*" } };
+        public string[] hitBarrier = new string[5] {  "{", "|", "|", "|", "}" };        //barrier that will be used to check if hit 
+
+
+        public string[,] specialBarrier = new string[2,2] { { "^", "^" }, { "^", "^" } };
 
 
 
 
 
-        public void displaySmallBarrier(int x, int y) {
+        public void displaySmallBarrier(int x, int y)
+        {
 
 
 
@@ -24,9 +29,11 @@ namespace CubeField
             int colLength = smallBarrier.GetLength(1);
 
 
-            for (int i = 0; i < rowLength; i++){
+            for (int i = 0; i < rowLength; i++)
+            {
 
-                for (int j = 0; j < colLength; j++) {
+                for (int j = 0; j < colLength; j++)
+                {
 
                     //Console.SetCursorPosition(x, y);
                     Console.Write(bigBarrier[i, j] + " ");
@@ -106,7 +113,7 @@ namespace CubeField
                 {
 
                     //Console.SetCursorPosition(x, y);
-                    Console.Write(bigBarrier[i,j] + " ");
+                    Console.Write(bigBarrier[i, j] + " ");
 
 
                 }
@@ -124,7 +131,21 @@ namespace CubeField
 
         } //end of thr displayBarrier method
 
+        public void displayHitBarrier(int x, int y)
+        {
 
+
+            foreach(var barrier in hitBarrier){
+                Console.Write(barrier);
+            }
+
+            //System.Threading.Thread.Sleep(1000); //wait for 1 second
+
+
+
+
+
+        } //end of thr displayBarrier method
 
 
 

@@ -34,6 +34,14 @@ namespace CubeField
 
             }
 
+            if (getLevel.levelNumber == 3) {
+
+                //detectMovement.MoveMent();
+
+            }
+
+
+
 
 
 
